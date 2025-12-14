@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>BISPO</title>
+  <style>
+    body {
+      background: #111;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 50px;
+    }
+    input {
+      padding: 10px;
+      width: 250px;
+    }
+    button {
+      padding: 10px 20px;
+      margin-left: 5px;
+      cursor: pointer;
+    }
+    #resposta {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🤖 BISPO</h1>
+  <p>Inteligência Artificial</p>
+
+  <input id="pergunta" placeholder="Digite algo">
+  <button onclick="responder()">Enviar</button>
+
+  <div id="resposta"></div>
+
+  <script>
+  function responder() {
+    const p = document.getElementById("pergunta").value.toLowerCase();
+    let r = "";
+
+    if (p.includes("quem é você") || p.includes("quem e voce")) {
+      r = "Eu sou o BISPO, uma inteligência artificial.";
+    } 
+    else if (p.includes("seu nome")) {
+      r = "Meu nome é BISPO.";
+    } 
+    else if (p.includes("oi") || p.includes("olá") || p.includes("ola")) {
+      r = "Olá! Eu sou o BISPO. Em que posso ajudar?";
+    } 
+    else if (p.includes("tudo bem")) {
+      r = "Estou bem, pronto para ajudar você.";
+    }
+    else if (p.includes("o que você faz") || p.includes("o que voce faz")) {
+      r = "Eu converso com você e estou aprendendo aos poucos.";
+    }
+    else if (p.includes("meu nome é")) {
+      const nome = p.replace("meu nome é", "").trim();
+      r = `Prazer em te conhecer, ${nome}.`;
+    }
+    else {
+      r = "Ainda não sei responder isso, mas estou evoluindo.";
+    }
+
+    document.getElementById("resposta").innerText = r;
+  }
+</script>
+
+</body>
+</html>
